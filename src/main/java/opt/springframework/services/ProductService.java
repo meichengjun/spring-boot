@@ -1,7 +1,7 @@
-package guru.springframework.services;
+package opt.springframework.services;
 
-import guru.springframework.commands.ProductForm;
-import guru.springframework.domain.Product;
+import opt.springframework.commands.ProductForm;
+import opt.springframework.domain.Product;
 
 import java.util.List;
 

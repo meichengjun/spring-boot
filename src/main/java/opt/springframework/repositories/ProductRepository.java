@@ -1,6 +1,6 @@
-package guru.springframework.repositories;
+package opt.springframework.repositories;
 
-import guru.springframework.domain.Product;
+import opt.springframework.domain.Product;
 import org.springframework.data.repository.CrudRepository;
 
 /**

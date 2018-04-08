@@ -1,7 +1,7 @@
-package guru.springframework.converters;
+package opt.springframework.converters;
 
-import guru.springframework.commands.ProductForm;
-import guru.springframework.domain.Product;
+import opt.springframework.commands.ProductForm;
+import opt.springframework.domain.Product;
 import org.bson.types.ObjectId;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;

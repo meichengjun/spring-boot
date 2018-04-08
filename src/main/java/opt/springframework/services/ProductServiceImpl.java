@@ -1,9 +1,9 @@
-package guru.springframework.services;
+package opt.springframework.services;
 
-import guru.springframework.commands.ProductForm;
-import guru.springframework.converters.ProductFormToProduct;
-import guru.springframework.domain.Product;
-import guru.springframework.repositories.ProductRepository;
+import opt.springframework.commands.ProductForm;
+import opt.springframework.converters.ProductFormToProduct;
+import opt.springframework.domain.Product;
+import opt.springframework.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
