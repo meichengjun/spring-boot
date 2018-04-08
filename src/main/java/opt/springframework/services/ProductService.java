@@ -1,6 +1,5 @@
 package opt.springframework.services;
 
-import opt.springframework.commands.ProductForm;
 import opt.springframework.domain.Product;
 
 import java.util.List;
@@ -18,5 +17,5 @@ public interface ProductService {
 
     void delete(String id);
 
-    Product saveOrUpdateProductForm(ProductForm productForm);
+    Product saveOrUpdateProductForm(Product productForm);
 }

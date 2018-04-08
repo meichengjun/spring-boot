@@ -1,7 +1,5 @@
 package opt.springframework.controllers;
 
-import opt.springframework.commands.ProductForm;
-import opt.springframework.converters.ProductToProductForm;
 import opt.springframework.domain.Product;
 import opt.springframework.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +19,7 @@ import javax.validation.Valid;
 public class ProductController {
     private ProductService productService;
 
-    private ProductToProductForm productToProductForm;
 
-    @Autowired
-    public void setProductToProductForm(ProductToProductForm productToProductForm) {
-        this.productToProductForm = productToProductForm;
-    }
 
     @Autowired
     public void setProductService(ProductService productService) {
@@ -53,20 +46,20 @@ public class ProductController {
     @RequestMapping("product/edit/{id}")
     public String edit(@PathVariable String id, Model model){
         Product product = productService.getById(id);
-        ProductForm productForm = productToProductForm.convert(product);
+       // ProductForm productForm = productToProductForm.convert(product);
 
-        model.addAttribute("productForm", productForm);
+        model.addAttribute("productForm", product);
         return "product/productform";
     }
 
     @RequestMapping("/product/new")
     public String newProduct(Model model){
-        model.addAttribute("productForm", new ProductForm());
+        model.addAttribute("productForm", new Product());
         return "product/productform";
     }
 
     @RequestMapping(value = "/product", method = RequestMethod.POST)
-    public String saveOrUpdateProduct(@Valid ProductForm productForm, BindingResult bindingResult){
+    public String saveOrUpdateProduct(@Valid Product productForm, BindingResult bindingResult){
 
         if(bindingResult.hasErrors()){
             return "product/productform";

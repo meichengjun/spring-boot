@@ -1,7 +1,5 @@
 package opt.springframework.services;
 
-import opt.springframework.commands.ProductForm;
-import opt.springframework.converters.ProductFormToProduct;
 import opt.springframework.domain.Product;
 import opt.springframework.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +15,10 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService {
 
     private ProductRepository productRepository;
-    private ProductFormToProduct productFormToProduct;
 
     @Autowired
-    public ProductServiceImpl(ProductRepository productRepository, ProductFormToProduct productFormToProduct) {
+    public ProductServiceImpl(ProductRepository productRepository) {
         this.productRepository = productRepository;
-        this.productFormToProduct = productFormToProduct;
     }
 
 
@@ -50,9 +46,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product saveOrUpdateProductForm(ProductForm productForm) {
-        Product savedProduct = saveOrUpdate(productFormToProduct.convert(productForm));
-
+    public Product saveOrUpdateProductForm(Product productForm) {
+        Product savedProduct = saveOrUpdate(productForm);
         System.out.println("Saved Product Id: " + savedProduct.getId());
         return savedProduct;
     }
